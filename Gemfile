@@ -69,3 +69,4 @@ end
 gem 'line-bot-api'
 gem 'dotenv-rails'
 gem 'devise'
+gem 'whenever', require: false
