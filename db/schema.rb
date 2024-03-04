@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_04_074640) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_04_092927) do
+  create_table "lenses", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "lens_type", null: false
+    t.date "opening_date", null: false
+    t.date "next_replacement_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
