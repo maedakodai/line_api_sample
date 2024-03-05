@@ -4,7 +4,7 @@ class LensesController < ApplicationController
   end
 
   def create
-    @lens = Lens.new(lens_params)
+    @lens = current_user.lenses.new(lens_params)
     if @lens.save
       redirect_to @lens, notice: 'Lens was successfully created.'
     else
@@ -12,6 +12,9 @@ class LensesController < ApplicationController
     end
   end
 
+  def show
+    @lens = current_user.lenses.find(params[:id])
+  end
   private
 
   def lens_params
