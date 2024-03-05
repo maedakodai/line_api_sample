@@ -1,0 +1,27 @@
+<%= form_with model: @lens, local: true do |form| %>
+  <% if @lens.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lens.errors.count, "error") %> prohibited this lens from being saved:</h2>
+
+      <ul>
+      <% @lens.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :lens_type, "Lens Type" %>
+    <%= form.select :lens_type, [['2週間', '2 weeks'], ['1ヶ月', '1 month']], {}, {id: :lens_lens_type} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opening_date %>
+    <%= form.date_field :opening_date, id: :lens_opening_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
