@@ -1,0 +1,32 @@
+<div class="min-h-screen bg-gray-100 flex items-center justify-center">
+  <div class="bg-white rounded-lg shadow-lg p-5 md:p-20 mx-2">
+    <div class="text-center">
+      <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
+        Lens Details
+      </h2>
+      <p class="text-md mt-2 text-gray-600">Review the details of your lens below.</p>
+    </div>
+    <div class="mt-12">
+      <div class="bg-gray-50 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+        <div class="relative mb-4">
+          <label for="lens_type" class="leading-7 text-sm text-gray-600">Lens Type</label>
+          <div class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            <%= @lens.lens_type %>
+          </div>
+        </div>
+        <div class="relative mb-4">
+          <label for="opening_date" class="leading-7 text-sm text-gray-600">Opening Date</label>
+          <div class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            <%= @lens.opening_date %>
+          </div>
+        </div>
+        <div class="relative mb-4">
+          <label for="next_replacement_date" class="leading-7 text-sm text-gray-600">Next Replacement Date</label>
+          <div class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            <%= @lens.next_replacement_date || "Not specified" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
