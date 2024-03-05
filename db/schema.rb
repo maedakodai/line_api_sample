@@ -12,12 +12,13 @@
 
 ActiveRecord::Schema[7.1].define(version: 2024_03_04_092927) do
   create_table "lenses", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.string "lens_type", null: false
     t.date "opening_date", null: false
     t.date "next_replacement_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_lenses_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,4 +33,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_04_092927) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "lenses", "users"
 end
